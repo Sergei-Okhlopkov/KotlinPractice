@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Practice</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+
+    <string-array name="menu_names">
+        <item id="m1">Только текст</item>
+        <item id="m2">Только картинка</item>
+        <item id="m3">Картинка и текст</item>
+        <item id="m4">Текст и картинка по очереди</item>
+    </string-array>
+
+    <string-array name="only_text_items">
+        <item id="item_1">Это RecycylerView. Не веришь? Проверь-ка!</item>
+        <item id="item_2">Lorem ipsum dolor sit amet.</item>
+        <item id="item_3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur aut
+            culpa cupiditate, deleniti dolor eius fugit hic quod recusandae reprehenderit?</item>
+        <item id="item_4">lorem</item>
+        <item id="item_5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores saepe vero voluptatem.</item>
+        <item id="item_6">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam at nobis quos saepe.</item>
+        <item id="item_7">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic nulla ut voluptatibus.
+            Aut error, id in quaerat quisquam voluptatem voluptates. Deserunt dolorem eveniet ipsam necessitatibus
+            nostrum, perferendis temporibus voluptatem!</item>
+    </string-array>
+</resources>
