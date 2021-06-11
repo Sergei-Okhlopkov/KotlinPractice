@@ -3,16 +3,15 @@ package com.example.practice
 
 
 import android.os.Bundle
-import android.telecom.PhoneAccountHandle
 import android.view.Menu
-import android.view.MenuInflater
 import android.view.MenuItem
-import android.widget.ArrayAdapter
-import android.widget.ListView
-import android.widget.Toast
+import android.widget.FrameLayout
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
 import com.google.android.material.navigation.NavigationView
 
 
@@ -22,13 +21,27 @@ class MainActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
-        initFunc()
+
     }
 
-    private fun initFunc(){
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.dataContainer,OnlyText()).commit()
+
+    private fun showOnlyText(){
+        val fOnlyText:Fragment=OnlyText()
+        var fTransaction: Int = supportFragmentManager.beginTransaction()
+            .replace(R.id.dataContainer, fOnlyText).commit()
+
+
     }
+
+    private fun showOnlyImage(){
+        val fOnlyImage:Fragment=OnlyImage()
+        var fTransaction: Int = supportFragmentManager.beginTransaction()
+            .replace(R.id.dataContainer, fOnlyImage).commit()
+
+
+    }
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,12 +59,14 @@ class MainActivity : AppCompatActivity() {
 
         val navigationView = findViewById<NavigationView>(R.id.navigationView)
 
-//        navigationView.setNavigationItemSelectedListener {
-//            when (it.itemId) {
-//
-//            }
-//            true
-//        }
+        navigationView.setNavigationItemSelectedListener() {
+            when (it.itemId) {
+            R.id.menu_1 -> showOnlyText()
+            R.id.menu_2 -> showOnlyImage()
+
+            }
+            true
+        }
 
 //        supportActionBar?.hide()
 //        android.R.style.Theme_Black // тёмная тема
@@ -82,6 +97,8 @@ class MainActivity : AppCompatActivity() {
         if (togglethis.onOptionsItemSelected(item)){
             return true
         }
+
+
         return super.onOptionsItemSelected(item)
     }
 
