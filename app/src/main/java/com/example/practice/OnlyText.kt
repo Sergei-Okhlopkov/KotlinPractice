@@ -15,8 +15,6 @@ class OnlyText : Fragment() {
 
     private var textsList = mutableListOf<String>()
 
-
-
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
