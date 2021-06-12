@@ -68,6 +68,7 @@ class MainActivity : AppCompatActivity() {
             true
         }
 
+
 //        supportActionBar?.hide()
 //        android.R.style.Theme_Black // тёмная тема
 //
