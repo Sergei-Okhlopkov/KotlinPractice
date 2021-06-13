@@ -38,6 +38,15 @@
         <item id="item_8">\tПояс Койпера — область реликтов времён образования Солнечной системы, является большим поясом осколков, подобным поясу астероидов,
             но состоит в основном изо льда.</item>
     </string-array>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+   
+    <string-array name="only_image_items">
+        <item id="item_1">ara</item>
+        <item id="item_2">legolas</item>
+        <item id="item_3">bilbo</item>
+        <item id="item_4">gendalf</item>
+        <item id="item_5">gimli</item>
+        <item id="item_6">teoden</item>
+        <item id="item_7">tranduil</item>
+        <item id="item_8">arven</item>
+    </string-array>
 </resources>
