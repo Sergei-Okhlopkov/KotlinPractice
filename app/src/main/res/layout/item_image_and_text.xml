@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:maxHeight="200dp"
+    android:padding="10dp"
+    android:layout_marginTop="10dp"
+    android:background="@drawable/rounded">
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/itemImageAndTextView"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginRight="10dp"
+            />
+
+        <TextView
+            android:id="@+id/itemTextAndImageView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:layout_marginBottom="5dp"
+
+            />
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>

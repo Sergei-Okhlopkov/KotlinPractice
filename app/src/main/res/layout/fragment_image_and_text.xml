@@ -3,15 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".OnlyImage">
+    tools:context=".ImageAndText">
 
-
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/imageRecycler"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-
+<androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/imageAndTextRecycyler"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="5dp"/>
 
 </FrameLayout>

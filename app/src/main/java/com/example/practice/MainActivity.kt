@@ -2,7 +2,12 @@ package com.example.practice
 
 
 
+import android.annotation.SuppressLint
+import android.app.ActionBar
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
+import android.text.Html
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.FrameLayout
@@ -13,6 +18,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import com.google.android.material.navigation.NavigationView
+import androidx.core.view.GravityCompat
+import android.view.View
 
 
 class MainActivity : AppCompatActivity() {
@@ -41,8 +48,21 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    private fun showImageAndText(){
+        val fImageAndText:Fragment=ImageAndText()
+        var fTransaction: Int =supportFragmentManager.beginTransaction()
+            .replace(R.id.dataContainer,fImageAndText).commit()
+    }
+
+    private fun showTextThenImage(){
+        val fTextThenImage:Fragment=TextThenImage()
+        var fTransaction: Int =supportFragmentManager.beginTransaction()
+            .replace(R.id.dataContainer,fTextThenImage).commit()
+    }
 
 
+
+    @SuppressLint("ResourceAsColor")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -56,6 +76,12 @@ class MainActivity : AppCompatActivity() {
 
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        //supportActionBar?.setBackgroundDrawable(ColorDrawable(R.color.brown))
+        //supportActionBar?.setTitle((Html.fromHtml("<font color=\"white\" >" + getString(R.string.app_name) + "</font>")))
+
+        val colorDrawable: ColorDrawable = ColorDrawable(Color.parseColor("#5C5231"))
+        supportActionBar?.apply {setBackgroundDrawable(colorDrawable)}
+
 
         val navigationView = findViewById<NavigationView>(R.id.navigationView)
 
@@ -63,9 +89,16 @@ class MainActivity : AppCompatActivity() {
             when (it.itemId) {
             R.id.menu_1 -> showOnlyText()
             R.id.menu_2 -> showOnlyImage()
+            R.id.menu_3 -> showImageAndText()
+            R.id.menu_4 -> showTextThenImage()
 
             }
+            //закрываем меню, при выборе пункта
+            drawerLayout.closeDrawer(GravityCompat.START)
             true
+
+
+
         }
 
 

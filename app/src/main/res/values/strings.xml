@@ -3,12 +3,19 @@
     <string name="open">Open</string>
     <string name="close">Close</string>
 
-    <string-array name="menu_names">
-        <item id="m1">Только текст</item>
-        <item id="m2">Только картинка</item>
-        <item id="m3">Картинка и текст</item>
-        <item id="m4">Текст и картинка по очереди</item>
+    <string-array name="sayings">
+        <item id="item_1">\tЕсли гибнут великие, то с малых великий спрос.</item>
+        <item id="item_2">\tПередай моему отцу, там где нет места для Тауриэль, нет места и для меня.</item>
+        <item id="item_3">\tНе подумайте, что я не люблю гостей... я люблю гостей, как и всякий хоббит,
+            но я предпочитаю знакомиться с ними прежде, чем они пришли!</item>
+        <item id="item_4">\tМир не в книгах и картах, он там — за окном!</item>
+        <item id="item_5">\tВерная смерть. Никаких шансов на успех. Так чего же мы ждём?!</item>
+        <item id="item_6">\tВперёд, Эорлинги!</item>
+        <item id="item_7">\tДа, они умрут. Сегодня, завтра, год спустя или через сотню лет:
+            какая разница? Они смертные.</item>
+        <item id="item_8">\tЯ знаю одно — если оставлю его сейчас, буду сожалеть об этом вечно.</item>
     </string-array>
+
 
     <string-array name="only_text_items">
         <item id="item_1">\tСолнечная система - планетная система, включает в себя центральную звезду
@@ -38,7 +45,7 @@
         <item id="item_8">\tПояс Койпера — область реликтов времён образования Солнечной системы, является большим поясом осколков, подобным поясу астероидов,
             но состоит в основном изо льда.</item>
     </string-array>
-   
+
     <string-array name="only_image_items">
         <item id="item_1">ara</item>
         <item id="item_2">legolas</item>
@@ -49,4 +56,7 @@
         <item id="item_7">tranduil</item>
         <item id="item_8">arven</item>
     </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>
