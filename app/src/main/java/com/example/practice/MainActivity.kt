@@ -60,6 +60,12 @@ class MainActivity : AppCompatActivity() {
             .replace(R.id.dataContainer,fTextThenImage).commit()
     }
 
+    private fun showViewPager(){
+        val fViewPager:Fragment=ViewPager()
+        var fTransaction: Int =supportFragmentManager.beginTransaction()
+            .replace(R.id.dataContainer,fViewPager).commit()
+    }
+
 
 
     @SuppressLint("ResourceAsColor")
@@ -91,6 +97,7 @@ class MainActivity : AppCompatActivity() {
             R.id.menu_2 -> showOnlyImage()
             R.id.menu_3 -> showImageAndText()
             R.id.menu_4 -> showTextThenImage()
+            R.id.menu_5 -> showViewPager()
 
             }
             //закрываем меню, при выборе пункта
