@@ -66,6 +66,18 @@ class MainActivity : AppCompatActivity() {
             .replace(R.id.dataContainer,fViewPager).commit()
     }
 
+    private fun showNotifications(){
+        val fNotifications:Fragment=Notifications()
+        var fTransaction: Int =supportFragmentManager.beginTransaction()
+            .replace(R.id.dataContainer,fNotifications).commit()
+    }
+
+    private fun changeTitle(title: String){
+
+        supportActionBar?.title = title
+
+    }
+
 
 
     @SuppressLint("ResourceAsColor")
@@ -89,15 +101,36 @@ class MainActivity : AppCompatActivity() {
         supportActionBar?.apply {setBackgroundDrawable(colorDrawable)}
 
 
+
         val navigationView = findViewById<NavigationView>(R.id.navigationView)
 
         navigationView.setNavigationItemSelectedListener() {
             when (it.itemId) {
-            R.id.menu_1 -> showOnlyText()
-            R.id.menu_2 -> showOnlyImage()
-            R.id.menu_3 -> showImageAndText()
-            R.id.menu_4 -> showTextThenImage()
-            R.id.menu_5 -> showViewPager()
+            R.id.menu_1 -> {
+                showOnlyText()
+                changeTitle("Только текст")
+            }
+            R.id.menu_2 -> {
+                showOnlyImage()
+                changeTitle("Только картинка")
+            }
+            R.id.menu_3 ->  {
+                showImageAndText()
+                changeTitle("Картинка и текст")
+            }
+            R.id.menu_4 -> {
+                showTextThenImage()
+                changeTitle("Текст/картинка по очереди")
+            }
+            R.id.menu_5 -> {
+                showViewPager()
+                changeTitle("ViewPager")
+            }
+
+                R.id.menu_6 -> {
+                    showNotifications()
+                    changeTitle("Уведомления")
+                }
 
             }
             //закрываем меню, при выборе пункта

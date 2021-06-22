@@ -16,20 +16,27 @@ class ViewPager : Fragment() {
 
     private var imagesList = mutableListOf<Int>()
     private var names = mutableListOf<String>()
+    private var textsList = mutableListOf<String>()
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
+
+
+        fillText()
         fillImage()
 
         val view_pager_2: ViewPager2? = view?.findViewById<ViewPager2>(R.id.viewPager)
-        view_pager_2?.adapter = ViewPageAdapter(imagesList)
+        view_pager_2?.adapter = ViewPageAdapter(textsList, imagesList)
         view_pager_2?.orientation = ViewPager2.ORIENTATION_HORIZONTAL
 
 
         //Индикатор - на какой картинке находимся (кружочки)
         val indicator= view?.findViewById<CircleIndicator3>(R.id.circleIndicatorOfViewPager)
         indicator?.setViewPager(view_pager_2)
+        //indicator?.setBackgroundColor(resources.getColor(R.color.brown))
+
+
 
         //fake swipe вправо и влево
         val btnNext: Button? = view?.findViewById(R.id.btnNext)
@@ -65,6 +72,10 @@ class ViewPager : Fragment() {
             var r: Int = getResources().getIdentifier(temp, "drawable", activity?.packageName);
             addToList(r)
         }
+    }
+
+    private fun fillText(){
+        textsList = resources.getStringArray(R.array.only_image_items).toMutableList()
     }
 
     override fun onCreateView(
