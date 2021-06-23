@@ -16,11 +16,16 @@ class ViewPager : Fragment() {
 
     private var imagesList = mutableListOf<Int>()
     private var names = mutableListOf<String>()
+<<<<<<< HEAD
     private var textsList = mutableListOf<String>()
+=======
+    //private var textsList = mutableListOf<String>()
+>>>>>>> main
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
+<<<<<<< HEAD
 
 
         fillText()
@@ -28,6 +33,13 @@ class ViewPager : Fragment() {
 
         val view_pager_2: ViewPager2? = view?.findViewById<ViewPager2>(R.id.viewPager)
         view_pager_2?.adapter = ViewPageAdapter(textsList, imagesList)
+=======
+        fillList()
+        fillImage()
+
+        val view_pager_2: ViewPager2? = view?.findViewById<ViewPager2>(R.id.viewPager)
+        view_pager_2?.adapter = ViewPageAdapter(/*textsList,*/imagesList)
+>>>>>>> main
         view_pager_2?.orientation = ViewPager2.ORIENTATION_HORIZONTAL
 
 
@@ -61,6 +73,10 @@ class ViewPager : Fragment() {
 
     }
 
+    private fun fillList(){
+       // textsList = resources.getStringArray(R.array.only_image_items).toMutableList()
+    }
+
     private fun addToList(image:Int){
         imagesList.add(image)
     }
@@ -68,8 +84,8 @@ class ViewPager : Fragment() {
     private fun fillImage() {
         names = resources.getStringArray(R.array.only_image_items).toMutableList()
         for (word in names){
-            var temp:String = word
-            var r: Int = getResources().getIdentifier(temp, "drawable", activity?.packageName);
+            val temp:String = word
+            val r: Int = getResources().getIdentifier(temp, "drawable", activity?.packageName);
             addToList(r)
         }
     }
