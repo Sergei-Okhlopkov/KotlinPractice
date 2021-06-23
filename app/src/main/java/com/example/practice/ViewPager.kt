@@ -17,7 +17,11 @@ class ViewPager : Fragment() {
     private var imagesList = mutableListOf<Int>()
     private var names = mutableListOf<String>()
 <<<<<<< HEAD
+<<<<<<< HEAD
     private var textsList = mutableListOf<String>()
+=======
+    //private var textsList = mutableListOf<String>()
+>>>>>>> main
 =======
     //private var textsList = mutableListOf<String>()
 >>>>>>> main
@@ -25,6 +29,7 @@ class ViewPager : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 
@@ -34,11 +39,16 @@ class ViewPager : Fragment() {
         val view_pager_2: ViewPager2? = view?.findViewById<ViewPager2>(R.id.viewPager)
         view_pager_2?.adapter = ViewPageAdapter(textsList, imagesList)
 =======
+=======
+>>>>>>> main
         fillList()
         fillImage()
 
         val view_pager_2: ViewPager2? = view?.findViewById<ViewPager2>(R.id.viewPager)
         view_pager_2?.adapter = ViewPageAdapter(/*textsList,*/imagesList)
+<<<<<<< HEAD
+>>>>>>> main
+=======
 >>>>>>> main
         view_pager_2?.orientation = ViewPager2.ORIENTATION_HORIZONTAL
 
