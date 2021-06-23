@@ -61,6 +61,13 @@ class MainActivity : AppCompatActivity() {
         
     }
 
+    private fun showViewPager(){
+        val fViewPager:Fragment=ViewPager()
+        var fTransaction: Int =supportFragmentManager.beginTransaction()
+            .replace(R.id.dataContainer,fViewPager).commit()
+
+    }
+
 
 
     private fun showNotifications(){
@@ -119,6 +126,15 @@ class MainActivity : AppCompatActivity() {
                 showTextThenImage()
                 changeTitle("Текст/картинка по очереди")
             }
+            R.id.menu_5 -> {
+                showViewPager()
+                changeTitle("ViewPager")
+            }
+            R.id.menu_6 -> {
+                showNotifications()
+                changeTitle("Уведомления")
+            }
+
 
 
 
