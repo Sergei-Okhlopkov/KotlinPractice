@@ -58,6 +58,7 @@ class MainActivity : AppCompatActivity() {
         val fTextThenImage:Fragment=TextThenImage()
         var fTransaction: Int =supportFragmentManager.beginTransaction()
             .replace(R.id.dataContainer,fTextThenImage).commit()
+        
     }
 
     private fun showViewPager(){
