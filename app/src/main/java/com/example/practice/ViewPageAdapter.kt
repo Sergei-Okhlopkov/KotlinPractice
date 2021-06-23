@@ -24,6 +24,8 @@ class ViewPageAdapter(private var texts: List<String>,private var images: List<I
     override fun onBindViewHolder(holder: ViewPageAdapter.Pager2ViewHolder, position: Int) {
         holder.itemImage.setImageResource(images[position])
         holder.itemText.text = texts[position]
+
+        
     }
 
     override fun getItemCount(): Int {
