@@ -71,7 +71,7 @@ class MainActivity : AppCompatActivity() {
 
 
     private fun showNotifications(){
-        val fNotifications:Fragment=Notifications()
+        val fNotifications:Fragment=Notifications(this)
         var fTransaction: Int =supportFragmentManager.beginTransaction()
             .replace(R.id.dataContainer,fNotifications).commit()
     }
