@@ -38,8 +38,12 @@ class ChoosePhoto : Fragment() {
         super.onActivityResult(requestCode, resultCode, data)
         val imageView: ImageView? = view?.findViewById<ImageView?>(R.id.imageViewChoosePhoto)
         if (requestCode == 123){
-            var bmp = data?.extras?.get("data") as Bitmap
-            imageView?.setImageBitmap(bmp)
+            var bmp: Bitmap
+            if (data?.extras?.get("data")!=null) {
+                bmp = data?.extras?.get("data") as Bitmap
+                imageView?.setImageBitmap(bmp)
+            }
+
         }else if(requestCode == 456){
             imageView?.setImageURI(data?.data)
         }

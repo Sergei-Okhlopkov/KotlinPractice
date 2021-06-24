@@ -3,23 +3,20 @@ package com.example.practice
 
 
 import android.annotation.SuppressLint
-import android.app.ActionBar
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
-import android.text.Html
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.FrameLayout
+import android.view.Window
+import android.view.WindowManager
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
+import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentTransaction
 import com.google.android.material.navigation.NavigationView
-import androidx.core.view.GravityCompat
-import android.view.View
 
 
 class MainActivity : AppCompatActivity() {
@@ -28,6 +25,10 @@ class MainActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
+
+        //устанавливаем цвет statusBar
+        val window: Window = getWindow()
+        window.setStatusBarColor(ContextCompat.getColor(this,R.color.black))
 
     }
 
@@ -104,9 +105,12 @@ class MainActivity : AppCompatActivity() {
 
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        //supportActionBar?.setBackgroundDrawable(ColorDrawable(R.color.brown))
-        //supportActionBar?.setTitle((Html.fromHtml("<font color=\"white\" >" + getString(R.string.app_name) + "</font>")))
 
+
+
+
+
+        //устанавливаем цвет actionBar
         val colorDrawable: ColorDrawable = ColorDrawable(Color.parseColor("#5C5231"))
         supportActionBar?.apply {setBackgroundDrawable(colorDrawable)}
 
