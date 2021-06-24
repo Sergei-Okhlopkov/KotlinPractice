@@ -19,5 +19,9 @@
 
     <item
         android:id="@+id/menu_6"
-        android:title="Уведомления"></item>
+        android:title="Уведомления"/>
+
+    <item
+        android:id="@+id/menu_7"
+        android:title="Выбор фотографий"/>
 </menu>

@@ -45,7 +45,7 @@ class ViewPager : Fragment() {
         btnNext?.setOnClickListener{
             view_pager_2?.apply{
                 beginFakeDrag()
-                fakeDragBy(-100f)
+                fakeDragBy(-1000f)
                 endFakeDrag()
             }
         }
@@ -53,7 +53,7 @@ class ViewPager : Fragment() {
         btnPrev?.setOnClickListener{
             view_pager_2?.apply{
                 beginFakeDrag()
-                fakeDragBy(100f)
+                fakeDragBy(1000f)
                 endFakeDrag()
             }
         }

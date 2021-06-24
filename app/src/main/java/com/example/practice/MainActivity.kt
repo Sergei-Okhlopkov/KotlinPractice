@@ -76,6 +76,12 @@ class MainActivity : AppCompatActivity() {
             .replace(R.id.dataContainer,fNotifications).commit()
     }
 
+    private fun showChoosePhoto(){
+        val fChoosePhoto:Fragment=ChoosePhoto()
+        var fTransaction: Int =supportFragmentManager.beginTransaction()
+            .replace(R.id.dataContainer,fChoosePhoto).commit()
+    }
+
     private fun changeTitle(title: String){
 
         supportActionBar?.title = title
@@ -134,6 +140,10 @@ class MainActivity : AppCompatActivity() {
                 showNotifications()
                 changeTitle("Уведомления")
             }
+                R.id.menu_7 -> {
+                    showChoosePhoto()
+                    changeTitle("Выбор фотографии")
+                }
 
 
 
