@@ -9,7 +9,7 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.Window
-import android.view.WindowManager
+import android.webkit.WebView
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -69,8 +69,6 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-
-
     private fun showNotifications(){
         val fNotifications:Fragment=Notifications(this)
         var fTransaction: Int =supportFragmentManager.beginTransaction()
@@ -83,10 +81,22 @@ class MainActivity : AppCompatActivity() {
             .replace(R.id.dataContainer,fChoosePhoto).commit()
     }
 
+    private fun showWebView(){
+        val fWebView:Fragment=WebViewer()
+        var fTransaction: Int =supportFragmentManager.beginTransaction()
+            .replace(R.id.dataContainer,fWebView).commit()
+    }
+
     private fun changeTitle(title: String){
 
         supportActionBar?.title = title
 
+    }
+
+    override fun onBackPressed() {
+        val w:WebView = findViewById<WebView>(R.id.webView)
+        if (w.canGoBack()) w.goBack()
+        else super.onBackPressed()
     }
 
 
@@ -106,10 +116,6 @@ class MainActivity : AppCompatActivity() {
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-
-
-
-
         //устанавливаем цвет actionBar
         val colorDrawable: ColorDrawable = ColorDrawable(Color.parseColor("#5C5231"))
         supportActionBar?.apply {setBackgroundDrawable(colorDrawable)}
@@ -120,38 +126,38 @@ class MainActivity : AppCompatActivity() {
 
         navigationView.setNavigationItemSelectedListener() {
             when (it.itemId) {
-            R.id.menu_1 -> {
-                showOnlyText()
-                changeTitle("Только текст")
-            }
-            R.id.menu_2 -> {
-                showOnlyImage()
-                changeTitle("Только картинка")
-            }
-            R.id.menu_3 ->  {
-                showImageAndText()
-                changeTitle("Картинка и текст")
-            }
-            R.id.menu_4 -> {
-                showTextThenImage()
-                changeTitle("Текст/картинка по очереди")
-            }
-            R.id.menu_5 -> {
-                showViewPager()
-                changeTitle("ViewPager")
-            }
-            R.id.menu_6 -> {
-                showNotifications()
-                changeTitle("Уведомления")
-            }
+                R.id.menu_1 -> {
+                    showOnlyText()
+                    changeTitle("Только текст")
+                }
+                R.id.menu_2 -> {
+                    showOnlyImage()
+                    changeTitle("Только картинка")
+                }
+                R.id.menu_3 ->  {
+                    showImageAndText()
+                    changeTitle("Картинка и текст")
+                }
+                R.id.menu_4 -> {
+                    showTextThenImage()
+                    changeTitle("Текст/картинка по очереди")
+                }
+                R.id.menu_5 -> {
+                    showViewPager()
+                    changeTitle("ViewPager")
+                }
+                R.id.menu_6 -> {
+                    showNotifications()
+                    changeTitle("Уведомления")
+                }
                 R.id.menu_7 -> {
                     showChoosePhoto()
                     changeTitle("Выбор фотографии")
                 }
-
-
-
-
+                R.id.menu_8 -> {
+                    showWebView()
+                    changeTitle("WebView")
+                }
 
             }
             //закрываем меню, при выборе пункта

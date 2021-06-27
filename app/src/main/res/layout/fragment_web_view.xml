@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/webRel"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".WebViewer">
+
+
+
+        <EditText
+            android:id="@+id/webViewEditText"
+            android:layout_width="250dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:hint="Введите адрес странички"
+            android:layout_height="50dp"/>
+
+        <Button
+            android:id="@+id/webViewButton"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:text="Go"
+            android:backgroundTint="@color/brown"
+            android:textColor="#FFF"
+           android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            />
+
+
+
+    <WebView
+        android:id="@+id/webView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/webViewEditText"
+        android:backgroundTint="@color/white"
+        />
+
+
+
+</RelativeLayout>
