@@ -21,6 +21,13 @@ import com.google.android.material.navigation.NavigationView
 
 class MainActivity : AppCompatActivity() {
 
+    class DataBaseReturn{
+
+        var id = "empty"
+        var text = "empty"
+        var image = -1
+    }
+
     private lateinit var togglethis: ActionBarDrawerToggle
 
     override fun onStart() {
@@ -86,6 +93,14 @@ class MainActivity : AppCompatActivity() {
         var fTransaction: Int =supportFragmentManager.beginTransaction()
             .replace(R.id.dataContainer,fWebView).commit()
     }
+
+    private fun showDB(){
+        val fDB:Fragment=DataBaseShow(this)
+        var fTransaction: Int =supportFragmentManager.beginTransaction()
+            .replace(R.id.dataContainer,fDB).commit()
+    }
+
+
 
     private fun changeTitle(title: String){
 
@@ -157,6 +172,11 @@ class MainActivity : AppCompatActivity() {
                 R.id.menu_8 -> {
                     showWebView()
                     changeTitle("WebView")
+                }
+
+                R.id.menu_9 -> {
+                    showDB()
+                    changeTitle("DataBase")
                 }
 
             }

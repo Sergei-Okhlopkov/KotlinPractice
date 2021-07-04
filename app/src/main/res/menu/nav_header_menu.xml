@@ -27,4 +27,7 @@
     <item
         android:id="@+id/menu_8"
         android:title="WebView"/>
+
+    <item android:id="@+id/menu_9"
+        android:title="DataBase"/>
 </menu>
