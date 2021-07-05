@@ -83,7 +83,12 @@ class DataBaseShow(context: Context) : Fragment() {
             if (id?.text.toString().isNotEmpty()){
 
                 DBMan.deleteFromDb(id?.text.toString())
-               // myAdapter.updateAdapter(DBMan.searchDbData(id?.text.toString()))
+                if (myAdapter.itemCount==1) myAdapter.updateAdapter(DBMan.searchDbData(id?.text.toString()))
+                else {
+                    fillRecyclerAdapter()
+                    initRecyclerView()
+                }
+
 
                 clearInput()
 
